@@ -15,7 +15,7 @@ def signup(request):
             return redirect('home')
     else:
         form = SignUpForm()
-        return render(request, 'harvestMgtApp/signup.html', {'form': form})
+    return render(request, 'harvestMgtApp/signup.html', {'form': form})
 
 
 def home(request):

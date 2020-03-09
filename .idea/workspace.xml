@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d1833a6-70ee-4b31-baa4-69e12fd84d87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/harvestMgtApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/harvestMgtApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hvstmgt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hvstmgt/urls.py" afterDir="false" />
@@ -28,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hvstmgt/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="391">
+              <caret line="23" column="58" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="58" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
               </folding>
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/harvestMgtApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="425">
+              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -53,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -70,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+            <state>
+              <caret selection-end-line="4" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -294,17 +292,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hvstmgt/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="391">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="58" />
           <folding>
             <element signature="e#631#663#0" expanded="true" />
           </folding>
@@ -313,18 +304,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/harvestMgtApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="425">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/harvestMgtApp/templates/harvestMgtApp/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
         </state>
       </provider>
     </entry>

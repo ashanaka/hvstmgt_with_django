@@ -1,4 +1,4 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
 
@@ -20,3 +20,9 @@ def signup(request):
 
 def home(request):
     return render(request, 'harvestMgtApp/home.html')
+
+
+def logoutuser(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('home')

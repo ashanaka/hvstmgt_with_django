@@ -1,6 +1,7 @@
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
-from .forms import SignUpForm
+from .forms import SignUpForm, LoginForm
+from django.contrib.auth.forms import AuthenticationForm
 
 
 def signup(request):
@@ -20,6 +21,16 @@ def signup(request):
 
 def home(request):
     return render(request, 'harvestMgtApp/home.html')
+
+
+def loginuser(request):
+    if request.method == 'POST':
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        login(request, user)
+        return redirect('home')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'harvestMgtApp/signup.html', {'form': form})
 
 
 def logoutuser(request):

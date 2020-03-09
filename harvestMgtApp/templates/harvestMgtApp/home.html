@@ -1,13 +1,13 @@
-<h1>Home page</h1>
+<h1>Harvest Management System</h1>
 
 {% if user.is_authenticated %}
-    user name {{ user.username }}
+    Logged In As |  {{ user.username }} <br><br>
     <form action="{% url 'logoutuser' %}" method="POST">
         {% csrf_token %}
         <button type="submit">Log out</button>
     </form>
 {% else %}
-    <a href="{% url 'loginuser' %}">login</a>
+    <a href="{% url 'loginuser' %}">login</a> |
     <a href="{% url 'signup' %}">Sign Up</a>
 {% endif %}
 

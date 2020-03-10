@@ -1,7 +1,8 @@
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, AddFarmerForm
+from .forms import SignUpForm, AddFarmerForm, FarmerGrows
 from django.contrib.auth.forms import AuthenticationForm
+from .models import Plant, Farmer
 
 
 def signup(request):
@@ -43,10 +44,14 @@ def logoutuser(request):
 
 
 def addfarmer(request):
-    form = AddFarmerForm(request.POST)
+    plants = Plant.objects.all()
     if request.method == 'POST':
+        form = AddFarmerForm(request.POST)
         form.save()
+        # form2 = FarmerGrows(request, plant=request.POST['plant'], farmer=request.POST['farmer'].id)
+        form2 = FarmerGrows.objects.create(plant=Plant.objects.get(pk=request.POST['plant']), farmer=Farmer.objects.latest('id'))
+        form2.save()
         return redirect('home')
     else:
         form = AddFarmerForm()
-    return render(request, 'harvestMgtApp/addfarmer.html', {'form': form})
+    return render(request, 'harvestMgtApp/addfarmer.html', {'form': form, 'plants': plants})

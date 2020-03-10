@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 
-from .models import Farmer
+from .models import Farmer, FarmerGrows
 
 
 class SignUpForm(UserCreationForm):
@@ -20,3 +20,9 @@ class AddFarmerForm(ModelForm):
     class Meta:
         model = Farmer
         fields = ['fName', 'nic', 'district']
+
+
+class FarmerGrowsForm(ModelForm):
+    class Meta:
+        model = FarmerGrows
+        fields = ['plant', 'farmer']

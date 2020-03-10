@@ -25,12 +25,15 @@ def home(request):
 
 def loginuser(request):
     if request.method == 'POST':
-        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
-        login(request, user)
-        return redirect('home')
+        try:
+            user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+            login(request, user)
+            return redirect('home')
+        except AttributeError:
+            return render(request, 'harvestMgtApp/login.html', {'error': "Invalid user!", 'form': AuthenticationForm()})
     else:
         form = AuthenticationForm()
-    return render(request, 'harvestMgtApp/signup.html', {'form': form})
+    return render(request, 'harvestMgtApp/login.html', {'form': form})
 
 
 def logoutuser(request):

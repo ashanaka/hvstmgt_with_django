@@ -8,9 +8,11 @@
         {% csrf_token %}
         <button type="submit">Log out</button>
     </form>
+    <a href="{% url 'addfarmer' %}">Home</a>
 {% else %}
     <a href="{% url 'loginuser' %}">login</a> |
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'signup' %}">Sign Up</a>  |
+    <a href="{% url 'home' %}">Home</a>
 {% endif %}
 
 <hr>

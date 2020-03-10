@@ -1,0 +1,13 @@
+{% extends 'harvestMgtApp/base.html' %}
+
+{% block content %}
+
+    <h1>Add Farmer</h1>
+
+    <form action="{% url 'addfarmer' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}

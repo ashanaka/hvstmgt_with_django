@@ -1,6 +1,6 @@
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
-from .forms import SignUpForm
+from .forms import SignUpForm, AddFarmerForm
 from django.contrib.auth.forms import AuthenticationForm
 
 
@@ -40,3 +40,13 @@ def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
+
+
+def addfarmer(request):
+    form = AddFarmerForm(request.POST)
+    if request.method == 'POST':
+        form.save()
+        return redirect('home')
+    else:
+        form = AddFarmerForm()
+    return render(request, 'harvestMgtApp/addfarmer.html', {'form': form})

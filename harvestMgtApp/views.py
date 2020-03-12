@@ -21,10 +21,9 @@ def signup(request):
 
 
 def home(request):
-    farmersPlants = FarmerGrows.objects.distinct()
-    farmers = Farmer.objects.all()
+    farmersPlants = FarmerGrows.objects.select_related().all()
 
-    return render(request, 'harvestMgtApp/home.html', {'farmersPlants':farmersPlants, 'farmers': farmers})
+    return render(request, 'harvestMgtApp/home.html', {'farmersPlants':farmersPlants})
 
 
 def loginuser(request):

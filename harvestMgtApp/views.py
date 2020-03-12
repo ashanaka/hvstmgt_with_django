@@ -21,7 +21,10 @@ def signup(request):
 
 
 def home(request):
-    return render(request, 'harvestMgtApp/home.html')
+    farmersPlants = FarmerGrows.objects.distinct()
+    farmers = Farmer.objects.all()
+
+    return render(request, 'harvestMgtApp/home.html', {'farmersPlants':farmersPlants, 'farmers': farmers})
 
 
 def loginuser(request):
@@ -48,8 +51,7 @@ def addfarmer(request):
     if request.method == 'POST':
         form = AddFarmerForm(request.POST)
         form.save()
-        # form2 = FarmerGrows(request, plant=request.POST['plant'], farmer=request.POST['farmer'].id)
-        form2 = FarmerGrows.objects.create(plant=Plant.objects.get(pk=request.POST['plant']), farmer=Farmer.objects.latest('id'))
+        form2 = FarmerGrows.objects.create(plant=Plant.objects.get(pk=request.POST['plant']), farmer=Farmer.objects.latest('id'), amount=request.POST['amount'])
         form2.save()
         return redirect('home')
     else:

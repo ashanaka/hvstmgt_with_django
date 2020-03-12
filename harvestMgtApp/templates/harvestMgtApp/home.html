@@ -2,6 +2,9 @@
 
 {% block content %}
     <h1>Welcome to home page</h1>
+    {% for farmerPlant in farmersPlants %}
+        <h5>{{ farmerPlant.plant }} | {{ farmerPlant.amount }} | {{  }}</h5>
+    {% endfor %}
 {% endblock  %}
 
 

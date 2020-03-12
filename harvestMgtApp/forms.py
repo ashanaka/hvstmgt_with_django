@@ -25,4 +25,4 @@ class AddFarmerForm(ModelForm):
 class FarmerGrowsForm(ModelForm):
     class Meta:
         model = FarmerGrows
-        fields = ['plant', 'farmer']
+        fields = ['plant', 'farmer', 'amount']

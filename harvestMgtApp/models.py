@@ -20,3 +20,4 @@ class Farmer(models.Model):
 class FarmerGrows(models.Model):
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=0,blank=True)

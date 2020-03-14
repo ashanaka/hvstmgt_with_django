@@ -23,10 +23,15 @@ def signup(request):
 
 
 def home(request):
-    farmersPlants = FarmerGrows.objects.select_related('plant').values()
-    # testObj = farmersPlants.values('plant').annotate(Sum('amount'))
+    farmersPlants = FarmerGrows.objects.select_related('plant').values('plant_id').distinct()
+    vals = []
+    for plantId in farmersPlants:
+        vals.append(plantId['plant_id'])
+
+    farmersPlants = Plant.objects.all()
+
     testObj = FarmerGrows.objects.values('plant').annotate(Sum('amount'))
-    return render(request, 'harvestMgtApp/home.html', {'farmersPlants': farmersPlants, 'testObj': testObj})
+    return render(request, 'harvestMgtApp/home.html', {'farmersPlants': farmersPlants, 'testObj': testObj, 'vals': vals})
 
 
 def loginuser(request):

@@ -2,9 +2,12 @@
 
 {% block content %}
     <h1>Welcome to home page</h1>
-    {{ farmersPlants }}
     {% for testObjs in testObj %}
-            <h5>{{ testObjs.amount__sum }} | {{ farmerPlant.plant }} \\ {{ testObjs }} </h5>
+        {% for plantA in farmersPlants %}
+            {% ifequal testObjs.plant plantA.id %}
+                <h5>{{ testObjs.amount__sum }} | {{ plantA.plantName }}</h5>
+            {% endifequal %}
+        {% endfor %}
     {% endfor %}
 <hr>
 {% endblock  %}

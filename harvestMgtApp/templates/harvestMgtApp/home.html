@@ -2,9 +2,11 @@
 
 {% block content %}
     <h1>Welcome to home page</h1>
-    {% for farmerPlant in farmersPlants %}
-        <h5>{{ farmerPlant.farmer.fName }} | {{ farmerPlant.amount }}</h5>
+    {{ farmersPlants }}
+    {% for testObjs in testObj %}
+            <h5>{{ testObjs.amount__sum }} | {{ farmerPlant.plant }} \\ {{ testObjs }} </h5>
     {% endfor %}
+<hr>
 {% endblock  %}
 
 

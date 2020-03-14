@@ -1,4 +1,6 @@
+
 from django.contrib.auth import login, authenticate, logout
+from django.db.models import Count, Sum
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, AddFarmerForm, FarmerGrows
 from django.contrib.auth.forms import AuthenticationForm
@@ -21,9 +23,10 @@ def signup(request):
 
 
 def home(request):
-    farmersPlants = FarmerGrows.objects.select_related().all()
-
-    return render(request, 'harvestMgtApp/home.html', {'farmersPlants':farmersPlants})
+    farmersPlants = FarmerGrows.objects.select_related('plant').values()
+    # testObj = farmersPlants.values('plant').annotate(Sum('amount'))
+    testObj = FarmerGrows.objects.values('plant').annotate(Sum('amount'))
+    return render(request, 'harvestMgtApp/home.html', {'farmersPlants': farmersPlants, 'testObj': testObj})
 
 
 def loginuser(request):

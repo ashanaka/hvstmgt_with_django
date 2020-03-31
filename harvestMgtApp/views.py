@@ -77,6 +77,14 @@ def addFarmerPlants(request, farmer_id):
         form2 = FarmerGrows();
     return render(request, 'harvestMgtApp/addFarmerPlants.html', {'form': form2, 'plants': plants})
 
+
 def farmers(request):
     farmersList = Farmer.objects.all()
     return render(request, 'harvestMgtApp/farmers.html', {'farmers': farmersList, })
+
+
+# view the list of plants of a particular farmer
+def viewPlants(request, farmer_id):
+    plants = FarmerGrows.objects.get(farmer=farmer_id)
+    print(plants.plant)
+    return render(request, 'harvestMgtApp/viewPlants.html', {'plants': plants, })

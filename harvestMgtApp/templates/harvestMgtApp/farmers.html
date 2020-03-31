@@ -11,7 +11,7 @@
     <th>Firstname</th>
     <th>NIC</th>
     <th>District</th>
-    <th>Edit</th>
+    <th>Plants</th>
   </tr>
 
     {% for farmer in farmers %}
@@ -19,7 +19,7 @@
             <td>{{ farmer.fName }}</td>
             <td>{{ farmer.nic }}</td>
             <td>{{ farmer.district }}</td>
-            <td><a href="#">Edit</a></td>
+            <td><a href="{% url 'viewPlants' farmer.id %}">View Plants</a></td>
         </tr>
     {% endfor %}
 

@@ -75,4 +75,8 @@ def addFarmerPlants(request, farmer_id):
         return redirect('home')
     else:
         form2 = FarmerGrows();
-    return render(request, 'harvestMgtApp/addFarmerPlants.html', {'form': form2, 'plants': plants});
+    return render(request, 'harvestMgtApp/addFarmerPlants.html', {'form': form2, 'plants': plants})
+
+def farmers(request):
+    farmersList = Farmer.objects.all()
+    return render(request, 'harvestMgtApp/farmers.html', {'farmers': farmersList, })

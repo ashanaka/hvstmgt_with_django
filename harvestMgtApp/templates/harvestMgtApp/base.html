@@ -3,7 +3,7 @@
 
 
 {% if user.is_authenticated %}
-    Logged In As |  {{ user.username }}  |  <a href="{% url 'addfarmer' %}">Add Farmers</a> <br><br>
+    Logged In As |  {{ user.username }}  |  <a href="{% url 'addfarmer' %}">Add Farmers</a> | <a href="{% url 'farmers' %}">View Farmsers</a> <br><br>
     <form action="{% url 'logoutuser' %}" method="POST">
         {% csrf_token %}
         <button type="submit">Log out</button>

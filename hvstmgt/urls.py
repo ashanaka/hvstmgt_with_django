@@ -25,4 +25,5 @@ urlpatterns = [
     path('loginuser/', views.loginuser, name='loginuser'),
     path('addfarmer/', views.addfarmer, name='addfarmer'),
     path('farmer/addPlants/<str:farmer_id>', views.addFarmerPlants, name='addFarmerPlants'),
+    path('farmers/', views.farmers, name='farmers'),
 ]

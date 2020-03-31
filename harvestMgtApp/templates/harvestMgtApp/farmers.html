@@ -1,0 +1,28 @@
+{% extends 'harvestMgtApp/base.html' %}
+
+
+{% block content %}
+
+
+<h1>Farmer List</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>NIC</th>
+    <th>District</th>
+    <th>Edit</th>
+  </tr>
+
+    {% for farmer in farmers %}
+        <tr>
+            <td>{{ farmer.fName }}</td>
+            <td>{{ farmer.nic }}</td>
+            <td>{{ farmer.district }}</td>
+            <td><a href="#">Edit</a></td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

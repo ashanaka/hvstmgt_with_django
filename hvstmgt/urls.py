@@ -27,4 +27,5 @@ urlpatterns = [
     path('farmer/addPlants/<str:farmer_id>', views.addFarmerPlants, name='addFarmerPlants'),
     path('farmers/', views.farmers, name='farmers'),
     path('viewPlants/<int:farmer_id>', views.viewPlants, name='viewPlants'),
+    path('myview/', views.myview, name='myview'),
 ]

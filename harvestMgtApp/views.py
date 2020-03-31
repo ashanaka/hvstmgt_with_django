@@ -2,7 +2,7 @@
 from django.contrib.auth import login, authenticate, logout
 from django.db.models import Count, Sum
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, AddFarmerForm, FarmerGrows
+from .forms import SignUpForm, AddFarmerForm, FarmerGrows, MyForm
 from django.contrib.auth.forms import AuthenticationForm
 from .models import Plant, Farmer
 
@@ -88,3 +88,14 @@ def viewPlants(request, farmer_id):
     plants = FarmerGrows.objects.get(farmer=farmer_id)
     print(plants.plant)
     return render(request, 'harvestMgtApp/viewPlants.html', {'plants': plants, })
+
+
+def myview(request):
+    if request.method == 'POST':
+        form = MyForm(request.POST, extra=request.POST.get('extra_field_count'))
+        if form.is_valid():
+            print("valid!")
+            return render(request, "harvestMgtApp/myview.html", {'form': form})
+    else:
+        form = MyForm()
+    return render(request, "harvestMgtApp/myview.html", { 'form': form })

@@ -24,4 +24,5 @@ urlpatterns = [
     path('logoutuser/', views.logoutuser, name='logoutuser'),
     path('loginuser/', views.loginuser, name='loginuser'),
     path('addfarmer/', views.addfarmer, name='addfarmer'),
+    path('farmer/addPlants/<str:farmer_id>', views.addFarmerPlants, name='addFarmerPlants'),
 ]

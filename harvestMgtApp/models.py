@@ -14,7 +14,7 @@ class Farmer(models.Model):
     district = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.fName
+        return str(self.pk)
 
 
 class FarmerGrows(models.Model):

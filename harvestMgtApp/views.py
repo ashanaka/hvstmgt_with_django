@@ -58,9 +58,21 @@ def addfarmer(request):
     if request.method == 'POST':
         form = AddFarmerForm(request.POST)
         form.save()
-        form2 = FarmerGrows.objects.create(plant=Plant.objects.get(pk=request.POST['plant']), farmer=Farmer.objects.latest('id'), amount=request.POST['amount'])
+        farmer_id = Farmer.objects.latest('id')
+        # print(farmer_id)
+        return render(request, 'harvestMgtApp/addFarmerPlants.html', {'farmer_id': farmer_id, 'plants': plants})
+    else:
+        form = AddFarmerForm()
+    return render(request, 'harvestMgtApp/addfarmer.html', {'form': form})
+
+
+def addFarmerPlants(request, farmer_id):
+    plants = Plant.objects.all()
+    farmer_id_new = Farmer.objects.get(pk=farmer_id)
+    if request.method == 'POST':
+        form2 = FarmerGrows.objects.create(plant=Plant.objects.get(pk=request.POST['plant']), farmer=farmer_id_new, amount=request.POST['amount'])
         form2.save()
         return redirect('home')
     else:
-        form = AddFarmerForm()
-    return render(request, 'harvestMgtApp/addfarmer.html', {'form': form, 'plants': plants})
+        form2 = FarmerGrows();
+    return render(request, 'harvestMgtApp/addFarmerPlants.html', {'form': form2, 'plants': plants});

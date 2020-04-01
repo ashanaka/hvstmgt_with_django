@@ -1,0 +1,37 @@
+{% extends 'harvestMgtApp/base.html' %}
+
+{% block content %}
+
+<h2>Filter Data</h2>
+
+<form action="{% url 'filterdata' %}" method="POST">
+
+    {% csrf_token %}
+
+    <label for="district">District</label>
+    <select name="district">
+        <option value="0">-----</option>
+        {% for district in districts %}
+            <option value="{{ district.district }}">{{ district.district }}</option>
+        {% endfor %}
+    </select> |
+    <label for="plant">Plant</label>
+    <select name="plant">
+        <option value="0">-----</option>
+        {% for plant in farmersPlants %}
+            <option value="{{ plant.id }}">{{ plant.plantName }} </option>
+        {% endfor %}
+    </select> |
+
+    <button type="submit">Filter</button>
+</form>
+
+{% for farmer in  farmers %}
+    {% for growingPlant in growingPlants %}
+        {% ifequal farmer growingPlant.farmer %}
+            <h5>{{ farmer.fName }} | {{ growingPlant.plant.plantName }} | {{ growingPlant.amount }}</h5>
+        {% endifequal %}
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}

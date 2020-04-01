@@ -4,8 +4,7 @@ from django.db import models
 class Plant(models.Model):
     plantName = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.plantName
+
 
 
 class Farmer(models.Model):
@@ -13,8 +12,7 @@ class Farmer(models.Model):
     nic = models.CharField(max_length=15)
     district = models.CharField(max_length=100)
 
-    def __str__(self):
-        return str(self.pk)
+
 
 
 class FarmerGrows(models.Model):

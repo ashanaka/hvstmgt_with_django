@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>View farmers plants</h1>
-
-        <h5>{{ plants }}</h5>
-
+        {% for plant in plants %}
+        <h5>{{ plant.plant }} | {{ plant.amount }}</h5>
+        {% endfor %}
 {% endblock %}

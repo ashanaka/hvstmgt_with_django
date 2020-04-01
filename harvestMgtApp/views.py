@@ -85,17 +85,7 @@ def farmers(request):
 
 # view the list of plants of a particular farmer
 def viewPlants(request, farmer_id):
-    plants = FarmerGrows.objects.get(farmer=farmer_id)
-    print(plants.plant)
+    plants = FarmerGrows.objects.filter(farmer=farmer_id)
     return render(request, 'harvestMgtApp/viewPlants.html', {'plants': plants, })
 
 
-def myview(request):
-    if request.method == 'POST':
-        form = MyForm(request.POST, extra=request.POST.get('extra_field_count'))
-        if form.is_valid():
-            print("valid!")
-            return render(request, "harvestMgtApp/myview.html", {'form': form})
-    else:
-        form = MyForm()
-    return render(request, "harvestMgtApp/myview.html", { 'form': form })

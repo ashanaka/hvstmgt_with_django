@@ -25,13 +25,24 @@
 
     <button type="submit">Filter</button>
 </form>
+<table>
+    <tr>
+        <th>Farmer Name |</th>
+        <th>Plant Name |</th>
+        <th>Amount </th>
+    </tr>
+    {% for farmer in  farmers %}
 
-{% for farmer in  farmers %}
-    {% for growingPlant in growingPlants %}
-        {% ifequal farmer growingPlant.farmer %}
-            <h5>{{ farmer.fName }} | {{ growingPlant.plant.plantName }} | {{ growingPlant.amount }}</h5>
-        {% endifequal %}
+        {% for growingPlant in growingPlants %}
+            {% ifequal farmer growingPlant.farmer %}
+                <tr>
+                    <td>{{ farmer.fName }} |</td>
+                    <td>{{ growingPlant.plant.plantName }} |</td>
+                    <td>{{ growingPlant.amount }}</td>
+                </tr>
+            {% endifequal %}
+        {% endfor %}
     {% endfor %}
-{% endfor %}
+</table>
 
 {% endblock %}

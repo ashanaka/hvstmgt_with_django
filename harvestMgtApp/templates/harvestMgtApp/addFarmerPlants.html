@@ -1,3 +1,8 @@
+{% extends 'harvestMgtApp/base.html' %}
+
+
+{% block content %}
+
 <h1>This is add farmer plant page</h1>
 
 
@@ -11,15 +16,20 @@
         {% for plant in plants %}
             <option value="{{ plant.pk }}">{{ plant.plantName }}</option>
         {% endfor %}
-    </select><br><br>
-    <lable for="amount">Amount</lable>
+    </select>
 
+    <br><br>
+
+    <lable for="amount">Amount</lable>
     <input type="text" name="amount">
 
 <hr>
 
-    <button type="submit">Submit</button>
+    <button type="submit" name="addAnother">Add another</button>
+    <button type="submit" name="submitPlant">Submit</button>
 
 </form>
+
+{% endblock %}
 
 

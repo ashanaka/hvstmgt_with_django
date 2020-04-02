@@ -124,8 +124,8 @@ def filterdata(request):
             growingPlants = FarmerGrows.objects.filter(plant=request.POST['plant'])
             return render(request, 'harvestMgtApp/filterdata.html', {'farmersPlants': farmersPlants, 'districts': districts, 'farmers': farmers, 'growingPlants': growingPlants, 'districtLabel': districtLabel, 'plantLabel': plantLabel})
     else:
-        districtLabel = request.POST['district']
-        plantLabel = Plant.objects.get(pk=request.POST['plant'])
+        districtLabel = "All"
+        plantLabel = "All"
         farmers = Farmer.objects.all()
         growingPlants = FarmerGrows.objects.all()
         return render(request, 'harvestMgtApp/filterdata.html', {'farmersPlants': farmersPlants, 'districts': districts, 'farmers': farmers, 'growingPlants': growingPlants, 'districtLabel': districtLabel, 'plantLabel': plantLabel})

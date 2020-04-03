@@ -59,6 +59,7 @@ def addfarmer(request):
         form = AddFarmerForm(request.POST)
         form.save()
         farmer_id = Farmer.objects.latest('id')
+        farmer_id = farmer_id.id
         # print(farmer_id)
         return render(request, 'harvestMgtApp/addFarmerPlants.html', {'farmer_id': farmer_id, 'plants': plants})
     else:
@@ -68,6 +69,7 @@ def addfarmer(request):
 
 def addFarmerPlants(request, farmer_id):
     plants = Plant.objects.all()
+    print(farmer_id)
     farmer_id_new = Farmer.objects.get(pk=farmer_id)
     if request.POST:
         if 'submitPlant' in request.POST:
